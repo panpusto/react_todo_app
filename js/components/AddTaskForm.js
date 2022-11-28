@@ -8,7 +8,7 @@ const AddTaskForm = ({setTasks}) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        fetch('https://todo-api.coderslab.pl/api/tasks', {
+        fetch(`${API_URL}/tasks`, {
             method: 'POST',
             headers: {
                 Authorization: API_KEY,
