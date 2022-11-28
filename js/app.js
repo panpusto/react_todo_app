@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
-import AddForm from "./components/AddForm";
-import Task from "./components/Task";
+import AddTaskForm from "./components/AddTaskForm";
+import TaskDiv from "./components/TaskDiv";
 import {getTasks} from './api/tasks';
 
 const App = () => {
@@ -13,9 +13,9 @@ const App = () => {
 
     return (
         <>
-            <AddForm setTasks={setTasks}/>
+            <AddTaskForm setTasks={setTasks}/>
             {
-                tasks.map(el => <Task key={el.id} data={el}/>)
+                tasks.map(el => <TaskDiv key={el.id} data={el}/>)
             }
         </>
     )

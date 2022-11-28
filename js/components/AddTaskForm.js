@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {API_URL, API_KEY} from '../api/constants';
 import {getTasks} from "../api/tasks";
 
-const AddForm = ({setTasks}) => {
+const AddTaskForm = ({setTasks}) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
@@ -56,4 +56,4 @@ const AddForm = ({setTasks}) => {
     );
 };
 
-export default AddForm;
+export default AddTaskForm;
