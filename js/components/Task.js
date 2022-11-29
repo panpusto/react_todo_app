@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {getOperations} from "../api/operations";
 import {deleteTask, updateTask} from "../api/tasks";
-import AddOperationForm from "./AddOperationForm";
+import Operations from "./Operations";
 
 const Task = ({data, onDeleteTask}) => {
     const [status, setStatus] = useState(data.status);
@@ -59,8 +59,6 @@ const Task = ({data, onDeleteTask}) => {
                         </button>}
                 </div>
             </div>
-
-            <AddOperationForm taskID
         </section>
     );
 };

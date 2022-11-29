@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddOperationForm = () => {
+const Operations = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const AddOperationForm = () => {
     );
 };
 
-export default AddOperationForm;
+export default Operations;
