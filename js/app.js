@@ -1,21 +1,31 @@
 import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
 import AddTaskForm from "./components/AddTaskForm";
-import TaskDiv from "./components/TaskDiv";
+import Task from "./components/Task";
 import {getTasks} from './api/tasks';
+import {getOperations} from "./api/operations";
 
 const App = () => {
-    const [tasks, setTasks] = useState([]);
+    const [task, setTask] = useState([]);
 
     useEffect(() => {
-        getTasks(setTasks);
+        getTasks(setTask);
     }, []);
+
+    const addNewTask = (task) => {
+        setTask(prev => [...prev, task]);
+        console.log(task);
+    }
+
+    const handleDeleteTask = (id) => {
+        setTask(prev => prev.filter(task => task.id !== id))
+    }
 
     return (
         <>
-            <AddTaskForm setTasks={setTasks}/>
+            <AddTaskForm onNewTask={addNewTask}/>
             {
-                tasks.map(el => <TaskDiv key={el.id} data={el}/>)
+                task.map(el => <Task key={el.id} data={el} onDeleteTask={handleDeleteTask}/>)
             }
         </>
     )
