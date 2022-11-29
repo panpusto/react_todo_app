@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom";
-import AddTaskForm from "./components/AddTaskForm";
+import NewTask from "./components/NewTask";
 import Task from "./components/Task";
 import {getTasks} from './api/tasks';
 import {getOperations} from "./api/operations";
@@ -23,7 +23,7 @@ const App = () => {
 
     return (
         <>
-            <AddTaskForm onNewTask={addNewTask}/>
+            <NewTask onNewTask={addNewTask}/>
             {
                 task.map(el => <Task key={el.id} data={el} onDeleteTask={handleDeleteTask}/>)
             }

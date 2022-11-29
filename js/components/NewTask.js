@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {createTask} from "../api/tasks";
 
-const AddTaskForm = ({addNewTask}) => {
+const NewTask = ({addNewTask}) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
@@ -48,4 +48,4 @@ const AddTaskForm = ({addNewTask}) => {
     );
 };
 
-export default AddTaskForm;
+export default NewTask;
