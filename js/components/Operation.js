@@ -17,11 +17,16 @@ const Operation = ({description, id, timeSpent: spentTime, status, onRemoveOpera
             timeSpent: timeSpent + parseInt(timeSpentInput),
         };
 
-        updateOperation(id, operation, data => {
-            setTimeSpent(data.timeSpent);
-            setTimeSpentForm(false);
-            setTimeSpentInput('');
-        })
+        if (timeSpentInput > 0) {
+            updateOperation(id, operation, data => {
+                setTimeSpent(data.timeSpent);
+                setTimeSpentForm(false);
+                setTimeSpentInput('');
+            })
+        } else {
+            return null
+        }
+        
     };
 
     const handleDeleteOperation = () => {
