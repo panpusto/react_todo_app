@@ -14,7 +14,6 @@ const App = () => {
 
     const addNewTask = (task) => {
         setTask(prev => [...prev, task]);
-        console.log(task);
     }
 
     const handleDeleteTask = (id) => {
