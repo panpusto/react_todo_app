@@ -13,7 +13,7 @@ const Operations = ({taskID, form, setForm, operations, setOperations, status}) 
         }
 
         createOperation(taskID, operation, (data) => {
-            setOperations(prev => [data, ...prev]);
+            setOperations(prev => [...prev, data]);
         });
         setForm(false);
         setOperationDescription('');

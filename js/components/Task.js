@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {getOperations} from "../api/operations";
+import {getOperations, updateOperation} from "../api/operations";
 import {deleteTask, updateTask} from "../api/tasks";
 import Operations from "./Operations";
 
@@ -22,7 +22,6 @@ const Task = ({data, onDeleteTask}) => {
             setStatus('closed')
         });
     }
-    // TODO improve handleFinishTask - should work without refresh page
 
     const toggleOperationDisplay = () => {
         setOperationDisplay(prevState => !prevState);
@@ -42,7 +41,7 @@ const Task = ({data, onDeleteTask}) => {
                     <h6 className="card-subtitle text-muted">{data.description}</h6>
                 </div>
                 <div>
-                    {data.status === 'open' && (
+                    {status === 'open' && (
                         <>
                             <button className="btn btn-info btn-sm mr-2" onClick={toggleOperationDisplay}>
                                 Add operation
@@ -66,11 +65,10 @@ const Task = ({data, onDeleteTask}) => {
                         setForm={setOperationDisplay}
                         operations={operations}
                         setOperations={setOperations}
-                        status={data.status}
+                        status={status}
                         />
         </section>
     );
 };
 
 export default Task;
-
