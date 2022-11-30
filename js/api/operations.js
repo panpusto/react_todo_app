@@ -66,7 +66,7 @@ export const updateOperation = (id, operation, successCallback) => {
             Authorization: API_KEY,
             'Content-Type': 'application/json',
         },
-        methods: 'PUT',
+        method: 'PUT',
         body: JSON.stringify(operation)
     })
         .then(response => response.json())
