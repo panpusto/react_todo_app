@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {createTask} from "../api/tasks";
 
-const NewTask = ({addNewTask}) => {
+const NewTask = ({onNewTask}) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
@@ -14,7 +14,9 @@ const NewTask = ({addNewTask}) => {
         status: 'open'
         };
 
-        createTask(task, addNewTask);
+        createTask(task, onNewTask);
+        setTitle('');
+        setDescription('');
     }
 
     return (

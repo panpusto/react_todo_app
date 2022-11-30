@@ -59,8 +59,18 @@ const Task = ({data, onDeleteTask}) => {
                         </button>}
                 </div>
             </div>
+
+            <Operations taskID={data.id}
+                        form={operationDisplay}
+                        setForm={setOperationDisplay}
+                        operations={operations}
+                        setOperations={setOperations}
+                        status={data.status}
+                        />
         </section>
     );
 };
 
 export default Task;
+
+// TODO improve handling finish button / rendering with status 'closed'
