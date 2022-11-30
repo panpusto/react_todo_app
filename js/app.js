@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import NewTask from "./components/NewTask";
 import Task from "./components/Task";
 import {getTasks} from './api/tasks';
-import {getOperations} from "./api/operations";
 
 const App = () => {
     const [task, setTask] = useState([]);
@@ -13,7 +12,7 @@ const App = () => {
     }, []);
 
     const addNewTask = (task) => {
-        setTask(prev => [...prev, task]);
+        setTask(prev => [task, ...prev]);
     }
 
     const handleDeleteTask = (id) => {

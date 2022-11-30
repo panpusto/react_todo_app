@@ -25,7 +25,7 @@ const Operations = ({taskID, form, setForm, operations, setOperations, status}) 
 
     return (
         <>
-            {form && (
+            {form && status === 'open' && (
                 <div className="card-body">
                 <form onSubmit={newOperation}>
                     <div className="input-group">
@@ -50,12 +50,12 @@ const Operations = ({taskID, form, setForm, operations, setOperations, status}) 
             <ul className="list-group list-group-flush">
                 {
                     operations.map(operation => (
-                        <Operation description={operation.description}
+                        <Operation key={operation.id}
+                                   description={operation.description}
                                    id={operation.id}
                                    timeSpent={operation.timeSpent}
                                    status={status}
                                    onRemoveOperation={deleteOperation}
-                                   key={operation.id}
                         />
                     ))
                 }

@@ -22,6 +22,7 @@ const Task = ({data, onDeleteTask}) => {
             setStatus('closed')
         });
     }
+    // TODO improve handleFinishTask - should work without refresh page
 
     const toggleOperationDisplay = () => {
         setOperationDisplay(prevState => !prevState);
@@ -73,4 +74,3 @@ const Task = ({data, onDeleteTask}) => {
 
 export default Task;
 
-// TODO improve handling finish button / rendering with status 'closed'
