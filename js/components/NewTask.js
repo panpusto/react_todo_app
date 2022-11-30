@@ -13,10 +13,14 @@ const NewTask = ({onNewTask}) => {
         description,
         status: 'open'
         };
-
-        createTask(task, onNewTask);
-        setTitle('');
-        setDescription('');
+        
+        if (title.length >= 5 && description.length >= 5) {
+            createTask(task, onNewTask);
+            setTitle('');
+            setDescription('');
+        } else {
+            return null
+        }
     }
 
     return (
